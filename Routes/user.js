@@ -42,7 +42,6 @@ user.post('/verify', (req, res) => {
 
 })
 
-// client.db('Secondlogin page').collection('user').insertOne(req.body)
 
 user.get('/home', (req, res) => {
     if (req.session.user) {
@@ -62,6 +61,21 @@ user.get('/logout', (req, res) => {
     req.session.destroy()
     res.redirect('/')
 });
+
+
+user.post("/product", (req, res) => {
+    console.log(req.body)
+    const database = client.db('Secondloginpage');
+    const product = database.collection('product');
+    product.insertOne(req.body)
+        .then(result => {
+            console.log('Document inserted:', result);
+        })
+        .catch(error => {
+            console.error('Error inserting document:', error);
+        });
+    
+})
 
 
 module.exports = user 
