@@ -1,4 +1,7 @@
 const express = require('express');
+const { MongoClient } = require("mongodb");
+const uri = "mongodb://localhost:27017";
+const client = new MongoClient(uri);
 const user = express.Router();
 const username = "axxeff";
 const password = "7";
@@ -27,8 +30,19 @@ user.post('/verify', (req, res) => {
         req.session.passwordwrong = true;
         res.redirect('/');
     }
+    const database = client.db('Secondloginpage');
+    const user = database.collection('user');
+    user.insertOne(req.body)
+        .then(result => {
+            console.log('Document inserted:', result);
+        })
+        .catch(error => {
+            console.error('Error inserting document:', error);
+        });
+
 })
 
+// client.db('Secondlogin page').collection('user').insertOne(req.body)
 
 user.get('/home', (req, res) => {
     if (req.session.user) {
