@@ -1,0 +1,49 @@
+<div class="overlay signup">
+    <form action="/signaction" method="post">
+        <div class="con">   
+
+            <header class="head-form">
+                <h2>Sign Up</h2>
+                <!--     A welcome message or an explanation of the signup form -->
+                <p>Signup here using your email,password and Phonenumber</p>
+            </header>
+
+            <h4 class="text-danger">{{message}}</h4>
+            <br>
+
+            <div class="field-set allset">
+
+                <span class="input-item">
+                    <i class="fa fa-user-circle"></i>
+                </span>
+                <input class="email" id="email" type="email" placeholder="@Email" name="email" required>
+                <br>
+                <br>
+
+
+                <span class="input-item">
+                    <i class="fa fa-user-circle"></i>
+                </span>
+                <input class="phonenumber" id="phonenumber" type="phonenumber" placeholder="@Phonenumber" name="phonenumber" required>
+                <br>
+                <br>
+
+
+                <span class="input-item">
+                    <i class="fa fa-key"></i>
+                </span>
+                <input class="password" type="password" placeholder="Password" id="password" name="password" required>
+                <!--      Show/hide password  -->
+                <span>
+                    <i class="fa fa-eye" aria-hidden="true" type="button" id="eye"></i>
+                </span>
+                <br>
+                <br>
+
+                <button class="signin">SignIn</button>
+
+            </div>
+
+        </div>
+    </form>
+</div>

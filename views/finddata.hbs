@@ -1,0 +1,40 @@
+<div>
+    <h1>Product List</h1>
+    <div id="product-list"></div>
+</div>
+
+
+<script>
+    const findurl = 'http://localhost:3005/finddata';
+
+    async function allProducts(){
+        try{
+            const findresponse = await fetch(findurl);
+
+            console.log('Response status:', findresponse.status);
+
+            if(!findresponse.ok){
+                throw new Error("Failed to fetch products")
+            }
+            console.log(findresponse)
+            const products = await findresponse.json();
+
+            console.log('Products fetched:', products);
+
+            const productlist = document.getElementById('product-list');
+            productlist.innerHTML = '';
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'productname';
+                productDiv.innerHTML = `
+                    <h3>${product.product}</h3>
+                    <h3>${product['product-type']}</h3>
+                `;
+                productlist.appendChild(productDiv);
+            })
+        }catch (error){
+            console.error('Error fetching products:', error);
+        }
+    }
+    allProducts();
+</script>

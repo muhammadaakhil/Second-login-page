@@ -7,7 +7,7 @@
             <header class="head-form">
                 <h2>Log In</h2>
                 <!--     A welcome message or an explanation of the login form -->
-                <p>login here using your username and password</p>
+                <p>login here using your Email and Password</p>
             </header>
             <!--     End  header Content  -->
             <h4 class="text-danger">{{message}}</h4>
@@ -19,7 +19,7 @@
                     <i class="fa fa-user-circle"></i>
                 </span>
                 <!--   user name Input-->
-                <input class="username" id="username" type="username" placeholder="@UserName" name="username" required>
+                <input class="username" id="username" type="username" placeholder="@Email" name="username" required>
 
                 <br>
                 <br>
@@ -55,7 +55,7 @@
                 <button class="btn submits frgt-pass" style="float: left;">Forgot Password</button>
                 <!--     Sign Up button -->
 
-                <button class="btn submits sign-up" style="background-color: #B8F2E6;">Sign Up
+                <button class="btn submits sign-up" id="frontsign" style="background-color: #B8F2E6;">Sign Up
                     <!--         Sign Up font icon -->
                     <i class="fa fa-user-plus" aria-hidden="true"></i>
                 </button>
@@ -69,3 +69,10 @@
         <!-- End Form -->
     </form>
 </div>
+
+
+<script>
+    document.getElementById('frontsign').addEventListener('click', () => {
+        window.location.href = '/signup';
+    });
+</script>

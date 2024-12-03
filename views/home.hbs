@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -77,10 +76,44 @@
 </div>
 
 
-    <form action="/product"method="post">
-        <input class="product" id="product" type="product" placeholder="@product" name="product" required>
-        <br><br>
-        <input class="product-type" type="product-type" placeholder="Product-type" id="product-type" name="product-type" required>
-        <br><br>
-        <button class="login">submit</button>
-    </form>
+<form action="/product" method="post">
+    <input class="product" id="product" type="product" placeholder="@product" name="product" required>
+    <br><br>
+    <input class="product-type" type="product-type" placeholder="Product-type" id="product-type" name="product-type"
+        required>
+    <br><br>
+    <button class="login">submit</button>
+</form>
+
+<div>
+    <button id="delete" class="delete" style="background-color: aqua;">DeleteProduct</button>
+</div>
+
+
+<script>
+    const data = { name: 'Sample' };
+    const deletebtn = document.getElementById('delete');
+    const baseurl = 'http://localhost:3005/delete'
+
+    deletebtn.addEventListener('click', deleteinfo)
+
+    async function deleteinfo(e) {
+        e.preventDefault()
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        };
+
+        const response = await fetch(baseurl, requestOptions)
+            .then(response => {
+                console.log(response)
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+    }
+</script>

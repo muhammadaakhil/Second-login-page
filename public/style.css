@@ -213,3 +213,68 @@ button:hover {
         transform: translateY(5px);
     }
 }
+
+
+
+
+.productname {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    color: yellowgreen;
+}
+.productname h3 {
+    margin: 0;
+    color: blueviolet;
+}
+
+
+
+/* Next page Signup */
+
+.allset{
+    margin-right: 35px;
+}
+
+input[class="email"]{
+    width: 240px;
+    height: 50px;
+  
+    margin-top: 2%;
+    padding: 15px;
+    
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+  
+    outline: none;
+    border: none;
+  
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.2s linear;
+    
+}
+input[id="email"] {width: 250px;}
+
+
+
+input[class="phonenumber"]{
+    width: 240px;
+    height: 50px;
+  
+    margin-top: 2%;
+    padding: 15px;
+    
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+  
+    outline: none;
+    border: none;
+  
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.2s linear;
+    
+}
+input[id="phonenumber"] {width: 250px;}
