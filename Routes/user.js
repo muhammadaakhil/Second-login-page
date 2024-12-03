@@ -6,6 +6,7 @@ const client = new MongoClient(uri);
 const user = express.Router();
 
 
+
 user.get('/', (req, res) => {
     if (req.session.user) {
         res.render('home');
