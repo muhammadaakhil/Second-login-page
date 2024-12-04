@@ -12,7 +12,7 @@ user.get('/', (req, res) => {
         res.render('home');
     } else {
         if (req.session.passwordwrong) {
-            res.render('login', { message: 'invalid email or password' });
+            res.render('login', { message: 'Click SignUp button & SignIn' });
             req.session.passwordwrong = false
         } else {
             res.render('login');
@@ -27,12 +27,12 @@ user.post('/verify', async (req, res) => {
     const signup = database.collection('signup');
     const wheresign = await signup.findOne({email:req.body.username,password:req.body.password})
     // console.log(wheresign)
-    if (req.body.username === wheresign.email && req.body.password === wheresign.password) { 
-        req.session.user = req.body.username;
-        res.redirect('/home')
-    } else {
+    if (!wheresign) { 
         req.session.passwordwrong = true;
         res.redirect('/');
+    } else {
+        req.session.user = req.body.username; 
+        res.redirect('/home');
     }
     const user = database.collection('user');
     user.insertOne(req.body)
