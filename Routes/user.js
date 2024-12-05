@@ -12,7 +12,7 @@ user.get('/', (req, res) => {
         res.render('home');
     } else {
         if (req.session.passwordwrong) {
-            res.render('login', { message: 'Click SignUp button & SignIn' });
+            res.render('login', { message: 'Invalid Email or Password'});
             req.session.passwordwrong = false
         } else {
             res.render('login');
@@ -51,7 +51,7 @@ user.get('/home', (req, res) => {
         res.render('home')
     } else {
         if (req.session.passwordwrong) {
-            res.render('login', { message: 'invalid email or password' });
+            res.render('login', { message: 'Invalid Email or Password'});
             req.session.passwordwrong = false
         } else {
             res.render('login')
