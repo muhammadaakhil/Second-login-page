@@ -44,6 +44,10 @@ form {
     padding: 2%;
     background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
 }
+#productcreate{
+    width: 400px;
+    min-height: 300px;
+}
 /* form Container */
 form .con {
     display: -webkit-flex;
@@ -278,3 +282,45 @@ input[class="phonenumber"]{
     
 }
 input[id="phonenumber"] {width: 250px;}
+
+
+input[class="product"]{
+    width: 240px;
+    height: 50px;
+  
+    margin-top: 2%;
+    padding: 15px;
+    margin-left: 50px;
+    
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+  
+    outline: none;
+    border: none;
+  
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.2s linear;
+    
+}
+
+input[class="product-type"]{
+    width: 240px;
+    height: 50px;
+  
+    margin-top: 2%;
+    padding: 15px;
+    margin-left: 50px;
+
+    
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+  
+    outline: none;
+    border: none;
+  
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.2s linear;
+    
+}
